@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @bof.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @bof.description %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @bof.type %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @bof.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_bof_path(@bof) %> |
+<%= link_to 'Back', bofs_path %>

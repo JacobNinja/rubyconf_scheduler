@@ -1,0 +1,29 @@
+<h1>Listing bofs</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Type</th>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @bofs.each do |bof| %>
+  <tr>
+    <td><%= bof.title %></td>
+    <td><%= bof.description %></td>
+    <td><%= bof.type %></td>
+    <td><%= bof.name %></td>
+    <td><%= link_to 'Show', bof %></td>
+    <td><%= link_to 'Edit', edit_bof_path(bof) %></td>
+    <td><%= link_to 'Destroy', bof, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Bof', new_bof_path %>

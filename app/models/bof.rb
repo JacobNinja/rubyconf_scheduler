@@ -1,0 +1,2 @@
+class Bof < Session
+end

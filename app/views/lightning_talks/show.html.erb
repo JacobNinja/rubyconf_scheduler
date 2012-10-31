@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @lightning_talk.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @lightning_talk.description %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @lightning_talk.type %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @lightning_talk.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_lightning_talk_path(@lightning_talk) %> |
+<%= link_to 'Back', lightning_talks_path %>

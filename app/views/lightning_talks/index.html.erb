@@ -1,0 +1,29 @@
+<h1>Listing lightning_talks</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Type</th>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @lightning_talks.each do |lightning_talk| %>
+  <tr>
+    <td><%= lightning_talk.title %></td>
+    <td><%= lightning_talk.description %></td>
+    <td><%= lightning_talk.type %></td>
+    <td><%= lightning_talk.name %></td>
+    <td><%= link_to 'Show', lightning_talk %></td>
+    <td><%= link_to 'Edit', edit_lightning_talk_path(lightning_talk) %></td>
+    <td><%= link_to 'Destroy', lightning_talk, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Lightning talk', new_lightning_talk_path %>

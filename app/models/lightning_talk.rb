@@ -1,0 +1,2 @@
+class LightningTalk < Session
+end
