@@ -19,26 +19,3 @@
 </table>
 
 </div>
-
-<div id="bofs" class="well">
-  <span class="header">Birds of a Feather <%= link_to 'Submit new session', new_bof_path %></span>
-
-<table class="table table-striped">
-  <tr>
-    <th>#</th>
-    <th>Speaker Name</th>
-    <th>Title</th>
-    <th>Description</th>
-  </tr>
-
-<% @bofs.each_with_index do |session, idx| %>
-  <tr>
-    <td><%= idx.next %></td>
-    <td><%= session.name %></td>
-    <td><%= session.title %></td>
-    <td><%= session.description %></td>
-  </tr>
-<% end %>
-</table>
-
-</div>
