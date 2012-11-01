@@ -1,29 +1,40 @@
-<h1>Listing sessions</h1>
-
-<table>
+<div id="lightning_talks" class="well">
+<span class="header">Lightning Talks <%= link_to 'Submit new session', new_lightning_talk_path %></span>
+<table class="table">
   <tr>
+    <th>Speaker Name</th>
     <th>Title</th>
     <th>Description</th>
-    <th>Type</th>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
-<% @sessions.each do |session| %>
+<% @lightning_talks.each do |session| %>
   <tr>
+    <td><%= session.name %></td>
     <td><%= session.title %></td>
     <td><%= session.description %></td>
-    <td><%= session.type %></td>
-    <td><%= session.name %></td>
-    <td><%= link_to 'Show', session %></td>
-    <td><%= link_to 'Edit', edit_session_path(session) %></td>
-    <td><%= link_to 'Destroy', session, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
-<br />
+</div>
 
-<%= link_to 'New Session', new_session_path %>
+<div id="bofs" class="well">
+  <span class="header">Birds of a Feather <%= link_to 'Submit new session', new_bof_path %></span>
+
+<table class="table">
+  <tr>
+    <th>Speaker Name</th>
+    <th>Title</th>
+    <th>Description</th>
+  </tr>
+
+<% @bofs.each do |session| %>
+  <tr>
+    <td><%= session.name %></td>
+    <td><%= session.title %></td>
+    <td><%= session.description %></td>
+  </tr>
+<% end %>
+</table>
+
+</div>

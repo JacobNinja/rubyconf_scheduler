@@ -2,11 +2,11 @@ class SessionsController < ApplicationController
   # GET /sessions
   # GET /sessions.json
   def index
-    @sessions = Session.all
+    @lightning_talks = LightningTalk.all
+    @bofs = Bof.all
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @sessions }
+      format.html
     end
   end
 

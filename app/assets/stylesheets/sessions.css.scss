@@ -1,3 +1,38 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#container {
+  width: 960px;
+  margin: auto;
+  margin-top: 100px;
+
+  #lightning_talks {
+    float: left;
+    width: 420px;
+    height: 100%;
+    margin-right: 20px;
+  }
+
+  #bofs {
+    float: right;
+    width: 420px;
+    margin-left: 20px;
+  }
+
+  table {
+    margin-top: 20px
+  }
+
+  .header {
+    font-size: 1.6em;
+    font-weight: bold;
+
+    a {
+      font-size:.6em;
+      font-weight: normal
+    }
+  }
+
+}
+

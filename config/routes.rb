@@ -1,4 +1,7 @@
 Scheduler::Application.routes.draw do
+
+  root to: "sessions#index"
+
   resources :bofs
 
   resources :lightning_talks
