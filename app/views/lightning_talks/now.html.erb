@@ -1,0 +1,55 @@
+<div class="sessions">
+<%- if now = @lightning_talks.first -%>
+  <%- if now.started? && ! now.completed? -%>
+    <script type="text/javascript">
+      window.endTime = <%= now.end_time.to_f %>;
+      window.startedFade = false;
+      window.timer = null;
+
+      function displayTime() {
+        var remaining, minutes, seconds;
+
+        remaining = endTime - (new Date().getTime() / 1000);
+        minutes = parseInt(remaining / 60);
+        seconds = parseInt(remaining % 60);
+
+        if (minutes < 1 && seconds < 1) {
+          minutes = 0;
+          seconds = 0;
+          window.clearInterval(timer);
+        }
+
+        minutes = minutes.toString();
+        seconds = seconds.toString();
+
+        if (seconds.length < 2) {
+          seconds = "0" + seconds;
+        }
+
+        $('.now .timer').html(minutes + ':' + seconds);
+
+        if (! startedFade && minutes < 1 && seconds < 30) {
+          startedFade = true;
+          $('body').animate({backgroundColor: '#ff0000'}, 30000);
+        }
+
+      }
+
+      window.timer = setInterval(displayTime, 1000);
+    </script>
+  <%- end -%>
+  <div class="now">
+    <div class="timer"></div>
+    <div class="title"><%= now.title %></div>
+    <div class="name"><%= now.name %></div>
+  </div>
+<%- end -%>
+
+<%- if now = @lightning_talks.second -%>
+  <div class="on-deck">
+    On deck:
+    <div class="title"><%= now.title %></div>
+    <div class="name"><%= now.name %></div>
+  </div>
+<%- end -%>
+</div>

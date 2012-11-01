@@ -1,4 +1,9 @@
 class LightningTalksController < ApplicationController
+
+  def now
+    @lightning_talks = LightningTalk.first_come.incomplete
+  end
+
   # GET /lightning_talks
   # GET /lightning_talks.json
   def index

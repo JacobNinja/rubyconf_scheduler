@@ -1,0 +1,4 @@
+$('#<%= dom_id @lightning_talk %> .actions').html('<%=
+  escape_javascript render :partial => 'actions',
+    locals: { lightning_talk: @lightning_talk }
+%>');

@@ -4,9 +4,29 @@ Scheduler::Application.routes.draw do
 
   resources :bofs
 
-  resources :lightning_talks
+  resources :lightning_talks do
+    collection do
+      get :now
+    end
+  end
 
   resources :sessions
+
+  namespace :admin do
+    resources :lightning_talks do
+      member do
+        post :start
+        post :complete
+      end
+    end
+
+    resources :bofs do
+      member do
+        post :start
+        post :complete
+      end
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

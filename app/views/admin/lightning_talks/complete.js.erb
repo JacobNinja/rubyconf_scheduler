@@ -1,0 +1,7 @@
+$('#<%= dom_id @lightning_talk %>').remove();
+<%- if @next -%>
+$('#<%= dom_id @next %> .actions').html('<%=
+  escape_javascript render :partial => 'actions',
+    locals: { lightning_talk: @next }
+%>');
+<%- end -%>

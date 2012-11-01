@@ -1,0 +1,14 @@
+<ul id="lightning_talks" class="sessions">
+  <%- @lightning_talks.each_with_index do |lightning_talk, index| -%>
+    <li id="<%= dom_id(lightning_talk) %>" class="session session-<%= index %>">
+      <div class="actions">
+      <%- if index.zero? -%>
+        <%= render :partial => 'actions', :locals => { :lightning_talk => lightning_talk } %>
+      <%- end -%>
+      </div>
+      <div class="title"><%= lightning_talk.title %></div>
+      <div class="name"><%= lightning_talk.name %></div>
+      <div class="description"><%= lightning_talk.description %></div>
+    </li>
+  <%- end -%>
+</ul>

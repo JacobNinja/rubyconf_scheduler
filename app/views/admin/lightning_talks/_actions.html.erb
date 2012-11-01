@@ -1,0 +1,5 @@
+<%- if lightning_talk.started? -%>
+  <%= link_to "end", [:complete, :admin, lightning_talk], :class => 'btn btn-large', data: { remote: true, method: :post } %>
+<%- else -%>
+  <%= link_to "start", [:start, :admin, lightning_talk], :class => 'btn btn-large', data: { remote: true, method: :post } %>
+<%- end -%>
