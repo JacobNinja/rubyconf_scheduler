@@ -4,7 +4,7 @@ Scheduler::Application.routes.draw do
 
   resources :bofs
 
-  resources :lightning_talks do
+  resources :lightning_talks, only: [:index, :new, :create, :show] do
     collection do
       get :now
     end
