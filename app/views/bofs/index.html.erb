@@ -1,25 +1,19 @@
-<h1>Listing bofs</h1>
+<h1>Listing Birds of a Feather</h1>
 
-<table>
+<table class="table-striped table">
   <tr>
+    <th>#</th>
+    <th>Speaker Name</th>
     <th>Title</th>
     <th>Description</th>
-    <th>Type</th>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
-<% @bofs.each do |bof| %>
+<% @bofs.each_with_index do |bof, idx| %>
   <tr>
+    <td><%= idx.next %></td>
     <td><%= bof.title %></td>
     <td><%= bof.description %></td>
-    <td><%= bof.type %></td>
     <td><%= bof.name %></td>
-    <td><%= link_to 'Show', bof %></td>
-    <td><%= link_to 'Edit', edit_bof_path(bof) %></td>
-    <td><%= link_to 'Destroy', bof, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

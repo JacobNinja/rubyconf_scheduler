@@ -1,14 +1,16 @@
 <div id="lightning_talks" class="well">
 <span class="header">Lightning Talks <%= link_to 'Submit new session', new_lightning_talk_path %></span>
-<table class="table">
+<table class="table-striped table">
   <tr>
+    <th>#</th>
     <th>Speaker Name</th>
     <th>Title</th>
     <th>Description</th>
   </tr>
 
-<% @lightning_talks.each do |session| %>
+<% @lightning_talks.each_with_index do |session, idx| %>
   <tr>
+    <td><%= idx.next %></td>
     <td><%= session.name %></td>
     <td><%= session.title %></td>
     <td><%= session.description %></td>
@@ -21,15 +23,17 @@
 <div id="bofs" class="well">
   <span class="header">Birds of a Feather <%= link_to 'Submit new session', new_bof_path %></span>
 
-<table class="table">
+<table class="table table-striped">
   <tr>
+    <th>#</th>
     <th>Speaker Name</th>
     <th>Title</th>
     <th>Description</th>
   </tr>
 
-<% @bofs.each do |session| %>
+<% @bofs.each_with_index do |session, idx| %>
   <tr>
+    <td><%= idx.next %></td>
     <td><%= session.name %></td>
     <td><%= session.title %></td>
     <td><%= session.description %></td>
