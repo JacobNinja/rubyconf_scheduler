@@ -123,3 +123,31 @@ div {
     }
   }
 }
+
+#sit-down {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: red;
+  font-size: 50px;
+  line-height: 50px;
+  font-family: monospace;
+  padding-top: 200px;
+  text-align: center;
+}
+
+body.warning {
+  background-color: red;
+  -moz-transition-property: background-color;
+  -moz-transition-duration: 30s;
+  -webkit-transition-property: background-color;
+  -webkit-transition-duration: 30s;
+  -o-transition-property: background-color;
+  -o-transition-duration: 30s;
+  -ms-transition-property: background-color;
+  -ms-transition-duration: 30s;
+  transition-property: background-color;
+  transition-duration: 30s;
+}
