@@ -1,7 +1,7 @@
 class LightningTalksController < ApplicationController
 
   def now
-    @lightning_talks = LightningTalk.first_come.incomplete
+    @lightning_talks = LightningTalk.sorted.incomplete
   end
 
   # GET /lightning_talks

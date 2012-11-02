@@ -2,6 +2,7 @@ class Session < ActiveRecord::Base
   attr_accessible :description, :name, :title, :type
 
   scope :first_come, order(:created_at)
+  scope :sorted,     order(:position)
   scope :incomplete, where('completed_at IS NULL')
 
   def end_time
