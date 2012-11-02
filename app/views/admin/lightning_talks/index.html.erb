@@ -21,6 +21,7 @@
       update: function() {
         $.post('/admin/lightning_talks/sort', $(this).sortable('serialize'), function() {
           $('#lightning_talks').effect('highlight');
+          window.location.reload();
         })
       }
     });
