@@ -12,3 +12,17 @@
     </li>
   <%- end -%>
 </ul>
+
+<script type="text/javascript">
+  $(function() {
+    $('#lightning_talks').sortable({
+      axis: 'y',
+      items: 'li',
+      update: function() {
+        $.post('/admin/lightning_talks/sort', $(this).sortable('serialize'), function() {
+          $('#lightning_talks').effect('highlight');
+        })
+      }
+    });
+  });
+</script>

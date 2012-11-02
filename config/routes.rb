@@ -14,6 +14,10 @@ Scheduler::Application.routes.draw do
 
   namespace :admin do
     resources :lightning_talks do
+      collection do
+        post :sort
+      end
+
       member do
         post :start
         post :complete
